@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/product.schema.json",
+  "title": "Open Spectra Format",
+  "description": "This schema validate an the open spectra format.",
+  "type": "object",
+  "properties": {
+    "proccesedValue": {
+          "type": "object",
+          "properties": {
+              "type" : {
+                  "type": "string",
+                  "enum": ["Reflectance", "Transimttance","Absorbance","Emmission","Counts"]
+              },
+              "expectedRange": {
+                  "type": "string",
+                  "description": "The range of the processed data."
+              },
+              "unit": {
+                  "type": "string",
+                  "description": "The unit of the processed data.",
+                  "enum": ["percentage","arbitrary unit"]
+              },
+              "data": {
+                  "type": "array",
+                  "items": {
+                      "type": "array",
+                      "items": {
+                          "type": "number"
+                      }
+                  }
+              }
+          }
+    },
+    "variablesLabels": {
+          "type": "array",
+          "items": {
+              "type": "object",
+              "properties": {
+                  "name": {
+                      "type": "string",
+                      "description": "The name of the variable."
+                  },
+                  "unit": {
+                      "type": "string",
+                      "enum": ["nm","um","cm-1","µm","arbitrary unit"], 
+                      "description": "The unit of the variable."
+                  },
+                  "type": {
+                      "type": "string",
+                      "enum": ["Wavelenghts", "Wavenumbers"]
+                  },
+                  "expectedRange": {
+                      "type": "string",
+                      "description": "The range of the variable."
+                  },
+                  "data": {
+                      "type": "array",
+                      "items": {
+                          "type": "array",
+                          "items": {
+                              "type": "number"
+                          }
+                      }
+                  }
+              }
+          }
+    },
+    "originalValues": {
+          "type": "object",
+          "properties": {
+              "type" : {
+                  "type": "string",
+                  "enum": ["Reflectance", "Transimttance","Absorbance","Emmission","Counts"]
+              },
+              "expectedRange": {
+                  "type": "string",
+                  "description": "The range of the original data."
+              },
+              "unit": {
+                  "type": "string",
+                  "description": "The unit of the original data.",
+                  "enum": ["percentage","arbitrary unit"]
+              },
+              "data": {
+                  "type": "array",
+                  "items": {
+                      "type": "array",
+                      "items": {
+                          "type": "number"
+                      }
+                  }
+              }
+          }
+    },
+    "background": {
+          "type": "object",
+          "properties": {
+              "type" : {
+                  "type": "string",
+                  "enum": ["Reflectance", "Transimttance","Absorbance","Emmission","Counts"]
+              },
+              "expectedRange": {
+                  "type": "string",
+                  "description": "The range of the background data."
+              },
+              "unit": {
+                  "type": "string",
+                  "description": "The unit of the background data.",
+                  "enum": ["percentage","arbitrary unit"]
+              },
+              "data": {
+                  "type": "array",
+                  "items": {
+                      "type": "array",
+                      "items": {
+                          "type": "number"
+                      }
+                  }
+              }
+          }
+    },
+    "reference": {
+          "type": "object",
+          "properties": {
+              "type" : {
+                  "type": "string",
+                  "enum": ["Reflectance", "Transimttance","Absorbance","Emmission","Counts"]
+              },
+              "expectedRange": {
+                  "type": "string",
+                  "description": "The range of the reference data."
+              },
+              "unit": {
+                  "type": "string",
+                  "description": "The unit of the reference data.",
+                  "enum": ["nm","um","cm-1","µm","arbitrary unit"]
+              },
+              "data": {
+                  "type": "array",
+                  "items": {
+                      "type": "array",
+                      "items": {
+                          "type": "number"
+                      }
+                  }
+              }
+          }
+    },
+    "comments": {
+            "type": "string",
+            "description": "Comments about the data."
+    },
+    "referenceCertifiedValues":{
+        "type": "string",
+        "description": "The certified values of the reference."
+    },
+    "annotations": {
+        "type": "string",
+        "description": "Annotation about the data."
+    }
+  },
+  "required": ["proccesedValue","variablesLabels","originalValues","background","reference","comments","referenceCertifiedValues","annotations"]
+}

@@ -1,0 +1,68 @@
+{
+    "@context": "http://schema.org",
+    "@id": "http://myspectradb.org/spectra_1234",
+    "@type": "Dataset",
+    "measurementTechnique":"Fiber optics spectroscopy",
+    "variableMeasured":"Reflectance",
+    "processing":{
+        "division" :{
+            "arg":"originalValues",
+            "arg": {
+                "multiplication" : {
+                    "arg": "test"
+                }
+            }
+        },
+        "1" : "processedValues = (originalValues - background)/(reference - background)"
+    },
+    "metadata":{
+        
+    },
+    "processedValues": {
+        "type":"Reflectance",
+        "unit":"percentage (%)",
+        "expectedRange":"0-1",
+        "data":[[0.5,0.8,0.2,0.3,1,1,0.5,0.8,0.2,0.3,1,1,0.5,0.8,0.2,0.3,1,1,0.5,0.8,0.2,0.3,1,1,0.5,0.8,0.2,0.3,1,1,0.5,0.8,0.2,0.3,1,1,0.5,0.8,0.2,0.3,1,1,0.5,0.8,0.2,0.3,1,1,0.5,0.8,0.2,0.3,1,1,],
+                [0.3,0.3,0.1,0.4]]
+    },
+    "variablesLabels": {
+        "type":"Wavelengths",
+        "unit":"nm",
+        "expectedRange":"300-1200",
+        "data":[[0.5,0.8,0.2,0.3],
+                [0.3,0.3,0.1,0.4]]
+    },
+    "originalValues":{
+        "type":"Counts",
+        "unit":"counts",
+        "expectedRange":"0-1234",
+        "data":[[123,123,234,1234],
+                [123,1235,1235,135]]
+    },
+    "background":{
+        "type":"Counts",
+        "unit":"counts",
+        "expectedRange":"0-1234",
+        "data":[[123,123,234,1234],
+                [123,1235,1235,135]]
+    },
+    "reference":{
+        "type":"Counts",
+        "unit":"counts",
+        "expectedRange":"0-1234",
+        "data":[[123,123,234,1234],
+                [123,1235,1235,135]]
+    },
+    "maskedValues":{
+        "type":"MaskedValues",
+        "indexes" : [1,2],
+        "data":[[false,false,true,false],
+                [false,true,false,false]]
+    },
+    "referenceCertifiedValues":{
+
+    },
+    "annotations":{
+
+    }
+}

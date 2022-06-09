@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/product.schema.json",
+  "title": "Open Spectra Format",
+  "description": "This schema validate an the open spectra format.",
+  "type": "object",
+  "$defs": {
+    "spectrum_data": {
+        "type": "object",
+        "properties": {
+            "type" : {
+                "type": "string",
+                "enum": ["Reflectance", "Transimttance","Absorbance","Emmission","Counts"]
+            },
+            "expectedMaxValue": {
+                "type": "number",
+                "description": "The expected maximum value that should be display, not always the max value of the array."
+            },
+            "expectedMinValue": {
+                "type": "number",
+                "description": "The expected minimum value that should be display, not always the min value of the array."
+            },
+            "unit": {
+                "type": "string",
+                "description": "The unit of the processed data.",
+                "enum": ["percentage","arbitrary unit"]
+            },
+            "data": {
+                "type": "array",
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            }
+        }
+    }
+  },
+  "properties": {
+    "@context": {
+      "type": "string",
+      "description": "The context of the data.",
+      "default": "https://open-spectra.org/contexts/spectra.jsonld"
+    },
+    "id":{
+      "type": "string",
+      "description": "The id of the spectrum, the url that returns the resource itself."
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the data.",
+      "default": "Spectrum"
+    },
+    "metadata":{
+        "type": "array",
+        "description": "The metadata of the spectrum.",
+        "items":{
+            "type": "object"
+        }
+    },
+    "proccesedValue": {"$ref": "#/$defs/spectrum_data"},
+    "variablesLabels": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "The name of the variable."
+            },
+            "unit": {
+                "type": "string",
+                "enum": ["nm","um","cm-1","µm","arbitrary unit"], 
+                "description": "The unit of the variable."
+            },
+            "expectedMaxValue": {
+                "type": "number",
+                "description": "The expected maximum value that should be display, not always the max value of the array."
+            },
+            "expectedMinValue": {
+                "type": "number",
+                "description": "The expected minimum value that should be display, not always the min value of the array."
+            },
+            "type": {
+                "type": "string",
+                "enum": ["Wavelenghts", "Wavenumbers"]
+            },
+            "data": {
+                "type": "array",
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            }
+        }
+    },
+    "originalValues": {"$ref": "#/$defs/spectrum_data"},
+    "background": {"$ref": "#/$defs/spectrum_data"},
+    "reference": {"$ref": "#/$defs/spectrum_data"},
+    "comments": {
+            "type": "string",
+            "description": "Comments about the data."
+    },
+    "referenceCertifiedValues":{
+        "type": "string",
+        "description": "The certified values of the reference."
+    },
+    "annotations": {
+        "type": "string",
+        "description": "Annotation about the data."
+    }
+  },
+  "required": ["id","proccesedValue","variablesLabels"]
+}

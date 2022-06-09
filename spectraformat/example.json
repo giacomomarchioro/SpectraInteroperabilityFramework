@@ -1,0 +1,42 @@
+{
+    "@context": "http://schema.org",
+    "@id": "#spectra_1234",
+    "@type": "Dataset",
+    "measurementTechnique":"Fiber optics spectroscopy",
+    "variableMeasured":"Reflectance",
+    "description": [
+      {
+        "@language": "de",
+        "@value": "Harmonisierte Daten zur Arbeitslosigkeit f\u00fcr europ\u00e4ische L\u00e4nder. Dieser Datensatz wurde von Google aufbereitet, basierend auf online Daten von Eurostat."
+      },
+      {
+        "@language": "en",
+        "@value": "Harmonized unemployment data for European countries. This dataset was prepared by Google based on data downloaded from Eurostat."
+      },
+      {
+        "@language": "fr",
+        "@value": "Donn\u00e9es harmonis\u00e9es sur le ch\u00f4mage dans les pays europ\u00e9ens. Ces donn\u00e9es ont \u00e9t\u00e9 pr\u00e9par\u00e9es par Google sur la base de donn\u00e9es t\u00e9l\u00e9charg\u00e9es \u00e0 partir d'Eurostat."
+      }
+    ],
+    "license": "https://ec.europa.eu/eurostat/about/policies/copyright",
+    "creator":{
+       "@type":"Organization",
+       "url": "https://ec.europa.eu/eurostat",
+       "name":"Eurostat",
+       "contactPoint": [
+         {
+           "@type":"ContactPoint",
+           "name": "Eurostat Multilingual User Support Network",
+           "contactType": "Central Support",
+           "telephone":"+352 4301 36789"
+         },
+         {
+           "@type":"ContactPoint",
+           "name": "Eurostat Multilingual User Support Network",
+           "contactType": "Republic of Ireland",
+           "availableLanguage": "en",
+           "telephone":"+353 151 33080"
+         }
+       ]
+    }
+}

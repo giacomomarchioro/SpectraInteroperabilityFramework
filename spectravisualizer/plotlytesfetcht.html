@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<body>
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+
+<script>
+async function load() {
+    let url = "http://localhost:5000/";
+    let gobj = null;
+    var graphDiv = document.getElementById('myPlot')
+    try {
+        gobj = await (await fetch(url)).json();
+    } catch(e) {
+        console.log('error');
+    }
+
+    //Plotly.restyle('myPlot', 'y', [gobj.proccesedValue.data[0]]);
+    //Plotly.restyle('myPlot', 'x', [gobj.variablesLabels.data[0]]);
+    Plotly.addTraces(graphDiv, {y: gobj.proccesedValue.data[0], x:gobj.variablesLabels.data[0]});
+    var update = {
+    title: 'some new title', // updates the title
+    'xaxis.range': [gobj.variablesLabels.expectedMinValue,gobj.variablesLabels.expectedMaxValue],   // updates the xaxis range
+    'yaxis.range': [gobj.proccesedValue.expectedMinValue,gobj.proccesedValue.expectedMaxValue]     // updates the end of the yaxis range
+    };
+    Plotly.relayout(graphDiv, update)
+    return gobj
+}
+
+
+
+var layout = {
+  title: 'Colorplot',
+  annotations: [],
+  xaxis: {
+	title: 'Frequency in Hz',
+  ticks: '',
+	type: 'lin',
+  side: 'bottom',
+	range: undefined // [2,5]
+  },
+  yaxis: {
+	title: 'Time in s',
+  ticks: '',
+  ticksuffix: ' ',
+  autosize: true,
+	range: undefined // [2,5]
+  }
+};
+// Define Data
+var data = [{
+  x: [1,2,3],
+  y: [1,2,3],
+  mode: "lines"
+}];
+
+// Display using Plotly
+Plotly.newPlot("myPlot", data, layout);
+</script>
+
+</body>
+</html>

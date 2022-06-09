@@ -1,0 +1,114 @@
+[Acquisition Parameters]
+Integration Time=23
+Flash Delay=100
+Boxcar=10
+Averages=50
+Correct Dark=0
+External Trigger=0
+Time Normalized=0
+Color Temperature=3100.000000000000000
+ADC1000Rotation=0
+View Mode=Specular Reflection Mode
+[Settings]
+Display File=C:\PROGRA~1\OCEANO~1\OOIBAS~1\Default.display
+Spectrometer File=C:\Users\OpDATe\Desktop\Software e Manuali Spettrofot\HR2B941.spec
+[Autosave]
+Enabled=0
+BaseFilename=OOIBase32DataFile
+Index=19
+[Overlay0]
+Active=0
+Filename=
+[Overlay1]
+Active=0
+Filename=
+[Overlay2]
+Active=0
+Filename=
+[Overlay3]
+Active=0
+Filename=
+[Overlay4]
+Active=0
+Filename=
+[Overlay5]
+Active=0
+Filename=
+[Overlay6]
+Active=0
+Filename=
+[Overlay7]
+Active=0
+Filename=
+[Channel0]
+Enabled=1
+Dark Stored=1
+Reference Stored=1
+Sample Dark Stored=0
+Dark Filename=C:\Users\OpDATe\Desktop\ARGENTI SPETTROMETRO\OMNIDIFF\28\28_14b.Master.Dark
+Reference Filename=C:\Users\OpDATe\Desktop\ARGENTI SPETTROMETRO\OMNIDIFF\28\28_14b.Master.Reference
+Sample Filename=
+Sample Dark Filename=
+[Channel1]
+Enabled=0
+Dark Stored=0
+Reference Stored=0
+Sample Dark Stored=0
+Dark Filename=
+Reference Filename=
+Sample Filename=
+Sample Dark Filename=
+[Channel2]
+Enabled=0
+Dark Stored=0
+Reference Stored=0
+Sample Dark Stored=0
+Dark Filename=
+Reference Filename=
+Sample Filename=
+Sample Dark Filename=
+[Channel3]
+Enabled=0
+Dark Stored=0
+Reference Stored=0
+Sample Dark Stored=0
+Dark Filename=
+Reference Filename=
+Sample Filename=
+Sample Dark Filename=
+[Channel4]
+Enabled=0
+Dark Stored=0
+Reference Stored=0
+Sample Dark Stored=0
+Dark Filename=
+Reference Filename=
+Sample Filename=
+Sample Dark Filename=
+[Channel5]
+Enabled=0
+Dark Stored=0
+Reference Stored=0
+Sample Dark Stored=0
+Dark Filename=
+Reference Filename=
+Sample Filename=
+Sample Dark Filename=
+[Channel6]
+Enabled=0
+Dark Stored=0
+Reference Stored=0
+Sample Dark Stored=0
+Dark Filename=
+Reference Filename=
+Sample Filename=
+Sample Dark Filename=
+[Channel7]
+Enabled=0
+Dark Stored=0
+Reference Stored=0
+Sample Dark Stored=0
+Dark Filename=
+Reference Filename=
+Sample Filename=
+Sample Dark Filename=

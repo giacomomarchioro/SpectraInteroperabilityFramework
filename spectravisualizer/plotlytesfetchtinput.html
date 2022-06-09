@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+<script>
+// this will be the min max of the data
+let expectedmaxval = 0;
+let expectedminval = 0;
+async function load() {
+    let url = document.getElementById('inputspectraURL').value;
+    let gobj = null;
+    var graphDiv = document.getElementById('myPlot')
+    try {
+        gobj = await (await fetch(url)).json();
+    } catch(e) {
+        console.log('error');
+    }
+    if (gobj.variablesLabels.expectedMaxValue > expectedmaxval) {
+        expectedmaxval = gobj.variablesLabels.expectedMaxValue;
+    }
+    if (gobj.variablesLabels.expectedMinValue < expectedminval) {
+        expectedminval = gobj.variablesLabels.expectedMinValue;
+    }
+
+    testvar = gobj.variablesLabels.expectedMaxValue
+    //Plotly.restyle('myPlot', 'y', [gobj.proccesedValue.data[0]]);
+    //Plotly.restyle('myPlot', 'x', [gobj.variablesLabels.data[0]]);
+    Plotly.addTraces(graphDiv, {y: gobj.proccesedValue.data[0], x:gobj.variablesLabels.data[0],name:'<a href=https://univr.zoom.us/>Testxxx</a>'});
+    var update = {
+    title: 'some new title', // updates the title
+    // 'xaxis.range': [gobj.variablesLabels.expectedMinValue,gobj.variablesLabels.expectedMaxValue],   // updates the xaxis range
+    // 'yaxis.range': [gobj.proccesedValue.expectedMinValue,gobj.proccesedValue.expectedMaxValue],
+    
+    xaxis: {
+        title: gobj.variablesLabels.type+" ("+gobj.variablesLabels.unit+")",
+        ticks: '',
+        type: 'lin',
+        side: 'bottom',
+        range: [expectedminval,expectedmaxval] // [2,5]
+    },
+    yaxis: {
+        title:  gobj.proccesedValue.type+" ("+gobj.proccesedValue.unit+")",
+        ticks: '',
+        ticksuffix: ' ',
+        autosize: true,
+        range: [gobj.proccesedValue.expectedMinValue,gobj.proccesedValue.expectedMaxValue] // [2,5]
+    }// updates the end of the yaxis range
+    };
+    Plotly.relayout(graphDiv, update)
+    return gobj
+}
+
+
+var layout = {
+  title: 'Colorplot',
+  annotations: [],
+  xaxis: {
+	title: 'Frequency in Hz',
+  ticks: '',
+	type: 'lin',
+  side: 'bottom',
+	range: undefined // [2,5]
+  },
+  yaxis: {
+	title: 'Time in s',
+  ticks: '',
+  ticksuffix: ' ',
+  autosize: true,
+	range: undefined // [2,5]
+  }
+};
+// Define Data
+var data = [{
+  x: [1,2,3],
+  y: [1,2,3],
+  mode: "lines"
+}];
+
+// Display using Plotly
+Plotly.newPlot("myPlot", data, layout);
+</script>
+<input type="text" id="inputspectraURL"> <button onclick="load()">Add spectrum</button>
+
+<a href="http://localhost:5000/OceanOptics_example1/reflectance/nm/100">http://localhost:5000/OceanOptics_example1/reflectance/nm/100</a>
+<a href="http://localhost:5000/test-33_2_-/reflectance/nm/100">http://localhost:5000/test-33_2_-/reflectance/nm/100</a>
+</body>
+</html>
