@@ -38,7 +38,7 @@ datamodel-codegen --input spectraformat-schema.json --output datamod.py
 A collection of spectra can be described using another representation using JSON dataformat that allows to group spectra linked by some criteria. 
 
 ## A visualizer 
-The visualizer allows to easily compare different spectra, these spectra can be responses of the spectral sever.
+The visualizer allows to easily compare different spectra, these spectra can be responses of the spectral sever. This implementation is based on [plotly](https://plotly.com/).
 
 ## Try the prototype
 We use pipenv for managing the virtual enviroments.
