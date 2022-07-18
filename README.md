@@ -2,7 +2,7 @@
 Prototypes for sharing and visualizing and comparing spectra from different repositories
 
 
-The phylosofy of the package is to make open and interoperable the data collected by multiple instruments, in particular spectroscopic techniques (such as UV-VIS-NIR, FT-IR and Raman spectroscopy). Spectral data is particularly challenging because comparing data from multiple instruments require a high level of standardization in the procedure of collecting data and the processing of the data. 
+The phylosofy of the package is inspired by the International Image Interoperability Framework and aims to make open and interoperable the data collected by multiple instruments, in particular spectroscopic techniques (such as UV-VIS-NIR, FT-IR and Raman spectroscopy). Spectral data is particularly challenging because comparing data from multiple instruments require a high level of standardization in the procedure of collecting data and the processing of the data. 
 
 Hence it is suggested to limit the processing and provide the data at his "rawest" level, the spectral server can provide the required processing for the correct visualization. For instance averaging, boxcar averaging and smoothing can all affect the results of the visualization often hiding dangerous artifacts.
 
